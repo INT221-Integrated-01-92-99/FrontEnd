@@ -134,7 +134,7 @@
               class="font-serif py-1 lg:text-base text-sm 2xl:px-11 xl:px-11 px-11 rounded-sm hover:bg-green-600 hover:text-white"
               bgcolor="bg-green-500"
               txtcolor="text-white"
-              txtbutt="Add"
+              :txtbutt="proId == 'add' ? 'Add' : 'Save'"
             ></base-button>
             <base-button
               @click.prevent="clearForm, this.$router.push('/product/views')"
