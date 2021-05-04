@@ -16,14 +16,17 @@ const routes = [
     component: Team
   },
   {
-    path: '/product',
+    path: '/product/:proId',
+    alias: '/product',
     name: 'Product',
-    component: Product
+    component: Product,
+    props: true
   },
   {
-  path: '/detail',
-  name: 'Detail',
-  component: Detail
+    path: '/detail',
+    name: 'Detail',
+    component: Detail,
+
   }
 ]
 
