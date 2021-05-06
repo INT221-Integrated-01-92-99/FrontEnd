@@ -10,15 +10,21 @@
         <source src="../assets/home-bg.mp4" type="video/mp4" />
       </video>
     </div>
-    <div class="2xl:mt-72 xl:mt-72 mt-56  flex-col justify-center text-center space-y-3">
-      <shop-name msg="PUSH&PULL"></shop-name>
-      <div class="2xl:pt-4 xl:pt-4 pt-2 flex-col justify-center">
+    <div
+      class="2xl:mt-72 lg:mt-56 mt-40 flex-col justify-center text-center space-y-3"
+    >
+      <h1
+        class="font-serif font-medium 2xl:text-7xl text-5xl text-white tracking-widest"
+      >
+        PUSH&PULL
+      </h1>
+      <div class="2xl:pt-4 pt-2 flex-col justify-center">
         <router-link to="/product"
           ><base-button
             bgcolor="bg-yellow-400"
             txtcolor="text-black"
             txtbutt="SHOP NOW!"
-            class="hover:bg-black hover:text-yellow-400 font-serif font-semibold transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 p-2 rounded-sm 2xl:text-xl xl:text-lg text-sm 2xl:w-40 2xl:h-12 xl:w-36 xl:h-11 w-28 h-10"
+            class="hover:bg-black hover:text-yellow-400 font-serif font-semibold transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 p-2 rounded-sm 2xl:text-xl lg:text-sm text-xs 2xl:w-40 2xl:h-12 lg:w-28 lg:h-10 w-24 h-9"
           >
           </base-button
         ></router-link>
@@ -28,13 +34,7 @@
 </template>
 
 <script>
-import ShopName from "../components/ShopName.vue";
-
 export default {
-  name: "Home",
-  components: {
-    ShopName,
-  },
   data() {
     return {};
   },

@@ -4,34 +4,32 @@
       <base-card
         v-for="pro in productArray"
         :key="pro.id"
-        class="px-8 py-6 2xl:w-1/4 xl:w-1/4 lg:w-1/3 md:w-1/2 transform hover:scale-110 motion-reduce:transform-none duration-700"
+        class="px-8 py-6 2xl:w-1/4 lg:w-1/3 w-1/2 transform hover:scale-110 motion-reduce:transform-none duration-700"
       >
         <router-link :to="'/detail?id=' + pro.id">
-          <!-- <div class="justify-col">
-                <div class="h-full w-full mx-auto"> -->
           <img class="mb-6 rounded-t-sm" :src="pro.proPathImg" />
-          <div class="mt-3 ml-3 text-left">
-            <p class="font-serif font-medium lg:text-lg md:text-lg text-xs">
+          <div class="mt-3 text-left">
+            <p class="font-serif font-medium text-lg">
               Brand: {{ pro.probrandName }}
             </p>
-            <p class="font-serif font-medium lg:text-lg md:text-lg text-xs">
+            <p class="font-serif font-medium text-lg">
               Product Name: {{ pro.proName }}
             </p>
-            <p class="font-serif font-medium lg:text-lg md:text-lg text-xs">
-              MFD: {{ pro.proMFDDATE }}
-            </p>
-            <p class="font-serif font-medium lg:text-lg md:text-lg text-xs">
+            <p class="font-serif font-medium text-lg">
               Price: {{ pro.proPrice }} THB
             </p>
-            <p class="font-serif font-medium lg:text-lg md:text-lg text-xs">
+            <p class="font-serif font-medium text-sm">
+              MFD: {{ pro.proMFDDATE }}
+            </p>
+            <p class="font-serif font-medium text-sm">
               Description: {{ pro.proDescription }}
             </p>
           </div>
         </router-link>
-        <div class="flex justify-center lg:pb-5 pb-3 lg:pt-5 pt-3 space-x-5">
+        <div class="flex justify-center mt-3 inset-x-0 bottom-0 space-x-5">
           <router-link :to="'/product/' + pro.id">
             <base-button
-              class="font-serif lg:text-base md:text-base text-sm py-1 lg:px-8 px-5 rounded-sm hover:bg-green-600 hover:text-white"
+              class="font-serif text-base py-1 lg:px-8 px-6 rounded-sm hover:bg-green-600 hover:text-white"
               bgcolor="bg-green-500"
               txtcolor="text-white"
               txtbutt="Edit"
@@ -39,9 +37,9 @@
           </router-link>
           <base-button
             @click="deletePro(pro.id)"
-            class="font-serif lg:text-base md:text-base text-sm py-1 lg:px-6 px-4 rounded-sm hover:bg-red-700 hover:text-white"
-            bgcolor="bg-red-600"
-            txtcolor="text-white"
+            class="font-serif text-base lg:px-6 px-4 rounded-sm border border-red-700 hover:bg-red-700 hover:text-white"
+            bgcolor=""
+            txtcolor="text-red-700"
             txtbutt="Delete"
           ></base-button>
         </div>
@@ -53,7 +51,6 @@
 <script>
 export default {
   props: [],
-  // emits: ["sending-edit"],
 
   data() {
     return {

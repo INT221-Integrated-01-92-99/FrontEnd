@@ -1,10 +1,9 @@
 <template>
   <div class="product">
     <div class="bg-cream-light bg-fixed">
-      <div class="lg:pt-16 pt-14 lg:pr-20 pr-16 flex justify-end space-x-2">
+      <div class="pt-16 lg:pr-20 pr-16 flex justify-end space-x-2">
         <base-button
           @click="(viewAddChange = true), this.$router.push('/product/views')"
-          bgcolor=""
           txtcolor="text-black"
           txtbutt="View Products"
           class="font-serif py-2 px-2 pt-4 text-base text-black hover:text-yellow-600 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 focus:text-yellow-600"
@@ -15,7 +14,6 @@
         </p>
         <base-button
           @click="(viewAddChange = false), this.$router.push('/product/add')"
-          bgcolor=""
           txtcolor="text-black"
           txtbutt="Add Product"
           class="font-serif py-2 px-2 pt-4 text-base text-black hover:text-yellow-600 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0 focus:text-yellow-600"
@@ -41,18 +39,18 @@ export default {
   components: {},
   data() {
     return {
-      currentTabComponent: "base-product-horizontal",
+      currentTabComponent: "base-product-view",
       viewAddChange: true,
     };
   },
 
   methods: {
-    changeToForm(currentComponent) {
-      this.currentTabComponent = currentComponent;
-      if (this.currentTabComponent == "base-form") {
-        console.log("0");
-      }
-    },
+    // changeToForm(currentComponent) {
+    //   this.currentTabComponent = currentComponent;
+    //   if (this.currentTabComponent == "base-form") {
+    //     console.log("0");
+    //   }
+    // },
 
     async regist(addNewPro) {
       try {
