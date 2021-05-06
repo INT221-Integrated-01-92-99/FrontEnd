@@ -1,36 +1,39 @@
 <template>
   <nav
     :class="{ 'bg-opacity-0 shadow-none': routes == '/' }"
-    class="navbar fixed flex justify-end w-full 2xl:space-x-10 xl:space-x-9 space-x-8 2xl:p-3 xl:p-3 p-3 2xl:pr-20 xl:pr-20 pr-20 top-0 text-white bg-cream-dark shadow-md"
+    class="navbar fixed w-full p-3 pr-20 md:pr-16 top-0 text-white bg-cream-dark shadow-md"
   >
-    <!-- <div class="mr-96">
-    <router-link
-      @click="changePath('/')"
-      tag="li"
-      to="/"
-      class="flex justify-start tracking-widest 2xl:text-xl text-base font-serif font-semibold mr-96 pr-56"
-      ><img class="h-10 w-10" src="./assets/paypal-logo.svg"></router-link
-    ></div> -->
-    <router-link
-      @click="changePath('/')"
-      tag="li"
-      to="/"
-      class="2xl:text-base text-base font-serif font-medium transition ease-in duration-300 transform hover:-translate-y-1 active:translate-y-0 p-2 focus:text-cream-light-brown hover:text-cream-light-brown"
-      >Home</router-link
-    >
-    <router-link
-      @click="changePath('/team')"
-      tag="li"
-      to="/team"
-      class="2xl:text-base text-base font-serif font-medium transition ease-in duration-300 transform hover:-translate-y-1 active:translate-y-0 p-2 focus:text-cream-light-brown hover:text-cream-light-brown"
-      >Team</router-link
-    >
-    <router-link
-      @click="changePath('/product')"
-      to="/product"
-      class="2xl:text-base text-base font-serif font-medium transition ease-in duration-300 transform hover:-translate-y-1 active:translate-y-0 p-2 focus:text-cream-light-brown hover:text-cream-light-brown"
-      >Product</router-link
-    >
+    <ul class="2xl:space-x-10 space-x-8 mt-1">
+      <li style="float:left" class="pb-1 2xl:ml-20 lg:ml-16 ml-14">
+        <router-link @click="changePath('/')" to="/"
+          ><img class="w-1/4 h-1/4" src="./assets/logo.svg"
+        /></router-link>
+      </li>
+      <li>
+        <router-link
+          @click="changePath('/product/views')"
+          to="/product/views"
+          class="text-base font-serif font-medium transition ease-in duration-300 transform hover:-translate-y-1 active:translate-y-0 p-2 focus:text-cream-light-brown hover:text-cream-light-brown"
+          >Product</router-link
+        >
+      </li>
+      <li>
+        <router-link
+          @click="changePath('/team')"
+          to="/team"
+          class="text-base font-serif font-medium transition ease-in duration-300 transform hover:-translate-y-1 active:translate-y-0 p-2 focus:text-cream-light-brown hover:text-cream-light-brown"
+          >Team</router-link
+        >
+      </li>
+      <li>
+        <router-link
+          @click="changePath('/')"
+          to="/"
+          class="text-base font-serif font-medium transition ease-in duration-300 transform hover:-translate-y-1 active:translate-y-0 p-2 focus:text-cream-light-brown hover:text-cream-light-brown"
+          >Home</router-link
+        >
+      </li>
+    </ul>
   </nav>
   <router-view />
 </template>
@@ -58,5 +61,13 @@ nav {
 nav.scrolled {
   @apply shadow-2xl;
   border-bottom: 0px;
+}
+
+li {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
 }
 </style>
