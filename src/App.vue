@@ -13,6 +13,7 @@
         <router-link
           @click="changePath('/product/views')"
           to="/product/views"
+          :class="{ 'text-cream-light-brown': routes == '/product/views' }"
           class="text-base font-serif font-medium transition ease-in duration-300 transform hover:-translate-y-1 active:translate-y-0 p-2 focus:text-cream-light-brown hover:text-cream-light-brown"
           >Product</router-link
         >
@@ -21,6 +22,7 @@
         <router-link
           @click="changePath('/team')"
           to="/team"
+          :class="{ 'text-cream-light-brown': routes == '/team' }"
           class="text-base font-serif font-medium transition ease-in duration-300 transform hover:-translate-y-1 active:translate-y-0 p-2 focus:text-cream-light-brown hover:text-cream-light-brown"
           >Team</router-link
         >
@@ -29,6 +31,7 @@
         <router-link
           @click="changePath('/')"
           to="/"
+          :class="{ 'text-cream-light-brown': routes == '/' }"
           class="text-base font-serif font-medium transition ease-in duration-300 transform hover:-translate-y-1 active:translate-y-0 p-2 focus:text-cream-light-brown hover:text-cream-light-brown"
           >Home</router-link
         >
