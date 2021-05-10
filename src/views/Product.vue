@@ -66,6 +66,7 @@ export default {
             proPrice: addNewPro.proPrice,
             proMFDDATE: addNewPro.proMFDDATE,
             proPathImg: addNewPro.proPathImg,
+            proColor: addNewPro.proCol
             //ชื่อเป๊ะกับbackend: addNewPro.proCol
           }),
         });

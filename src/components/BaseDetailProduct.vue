@@ -46,11 +46,13 @@
             </router-link>
 
             <base-button
+              @click="sendToDelete = true, sendId = product.id, this.$router.push('/product/views')"
               class="font-serif px-6 rounded-sm border border-red-700 hover:bg-red-700 hover:text-white"
               bgcolor=""
               txtcolor="text-red-700"
               txtbutt="Delete"
             ></base-button>
+            <base-delete :send-to-delete ="sendToDelete" :send-id ="sendId"></base-delete>
           </div>
         </div>
       </section>
@@ -68,6 +70,8 @@ export default {
     return {
       product: [],
       urlProduct: "http://localhost:5000/product",
+      sendToDelete: false,
+      sendId: 0
     };
   },
   methods: {

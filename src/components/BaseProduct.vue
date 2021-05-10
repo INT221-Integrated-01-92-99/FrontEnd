@@ -36,7 +36,7 @@
             ></base-button>
           </router-link>
           <base-button
-            @click="deletePro(pro.id)"
+           @click="sendId = pro.id, sendToDelete = true"
             class="font-serif text-base lg:px-6 px-4 rounded-sm border border-red-700 hover:bg-red-700 hover:text-white"
             bgcolor=""
             txtcolor="text-red-700"
@@ -44,6 +44,10 @@
           ></base-button>
         </div>
       </base-card>
+       <base-delete :send-to-delete ="sendToDelete"
+                       :send-id ="sendId"
+                       @will-set-false="setFalse">
+          </base-delete>
     </div>
   </div>
 </template>
@@ -58,7 +62,8 @@ export default {
       productArray: [],
       urlProduct: "http://localhost:5000/product",
       urlBrand: "http://localhost:5000/brand",
-      sendEdit: false,
+      sendToDelete: false,
+      sendId: 0
     };
   },
   methods: {
@@ -67,26 +72,14 @@ export default {
       const data = await res.json(url);
       return data;
     },
-    async deletePro(deleteProduct) {
-      if (
-        confirm("Are you sure you want to DELETE this product on your page?")
-      ) {
-        try {
-          await fetch(`${this.urlProduct}/${deleteProduct}`, {
-            method: "DELETE",
-          });
-          this.productArray = this.productArray.filter(
-            (m) => m.id !== deleteProduct
-          );
-        } catch (error) {
-          console.log(`This product could not delete because ${error}`);
-        }
-        alert("Your product is now delete");
-      } else {
-        alert("Your delete was cancel.");
-      }
+    setFalse(id){
+      this.sendToDelete = false;
+      this.productArray = this.productArray.filter( p=> p.id !== id);
+      this.sendId = 0;
+      console.log("momHelp")
+    }
+
     },
-  },
   async created() {
     this.brandArray = await this.fetch(this.urlBrand);
     this.productArray = await this.fetch(this.urlProduct);
