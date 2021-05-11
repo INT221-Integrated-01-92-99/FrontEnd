@@ -38,7 +38,7 @@
           >
             <router-link :to="'/product/' + product.id">
               <base-button
-                class="font-serif py-1 px-7 rounded-sm hover:bg-green-600 hover:text-white"
+                class="focus:outline-none font-serif py-1 px-7 rounded-sm hover:bg-green-600 hover:text-white"
                 bgcolor="bg-green-500"
                 txtcolor="text-white"
                 txtbutt="Edit"
@@ -47,7 +47,7 @@
 
             <base-button
               @click="sendToDelete = true, sendId = product.id, this.$router.push('/product/views')"
-              class="font-serif px-6 rounded-sm border border-red-700 hover:bg-red-700 hover:text-white"
+              class="focus:outline-none font-serif px-6 rounded-sm border border-red-700 hover:bg-red-700 hover:text-white"
               bgcolor=""
               txtcolor="text-red-700"
               txtbutt="Delete"
@@ -68,7 +68,7 @@ export default {
 
   data() {
     return {
-      product: [],
+      product:[],
       urlProduct: "http://localhost:5000/product",
       sendToDelete: false,
       sendId: 0

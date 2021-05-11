@@ -29,7 +29,7 @@
         <div class="flex justify-center mt-3 inset-x-0 bottom-0 space-x-5">
           <router-link :to="'/product/' + pro.id">
             <base-button
-              class="font-serif text-base py-1 lg:px-8 px-6 rounded-sm hover:bg-green-600 hover:text-white"
+              class="focus:outline-none font-serif text-base py-1 lg:px-8 px-6 rounded-sm hover:bg-green-600 hover:text-white"
               bgcolor="bg-green-500"
               txtcolor="text-white"
               txtbutt="Edit"
@@ -37,7 +37,7 @@
           </router-link>
           <base-button
            @click="sendId = pro.id, sendToDelete = true"
-            class="font-serif text-base lg:px-6 px-4 rounded-sm border border-red-700 hover:bg-red-700 hover:text-white"
+            class="focus:outline-none font-serif text-base lg:px-6 px-4 rounded-sm border border-red-700 hover:bg-red-700 hover:text-white"
             bgcolor=""
             txtcolor="text-red-700"
             txtbutt="Delete"
@@ -76,7 +76,6 @@ export default {
       this.sendToDelete = false;
       this.productArray = this.productArray.filter( p=> p.id !== id);
       this.sendId = 0;
-      console.log("momHelp")
     }
 
     },
